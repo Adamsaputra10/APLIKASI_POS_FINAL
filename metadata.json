@@ -1,0 +1,8 @@
+{
+  "name": "Copy_POS_KASIR",
+  "description": "Imported from GitHub: Adamsaputra10/POS_KASIR",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
