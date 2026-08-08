@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+:root {
+  --bg-app: #121324;
+  --bg-box: #1a1c36;
+  --bg-header: #17192f;
+  --bg-subtle: #0d0e1c;
+  --bg-hover: #242747;
+  --text-main: #e0e6f8;
+  --text-teal: #55ffd6;
+  --text-muted: #94a3b8;
+  --border-tosca: #00a88f;
+  --accent-orange: #ff7700;
+  --box-shadow: #0a0b14;
+}
+
+[data-theme='light'] {
+  --bg-app: #f4f1ea;
+  --bg-box: #ffffff;
+  --bg-header: #eae6db;
+  --bg-subtle: #e6e0d2;
+  --bg-hover: #e8e2d4;
+  --text-main: #121324;
+  --text-teal: #007a68;
+  --text-muted: #57607a;
+  --border-tosca: #00a88f;
+  --accent-orange: #ff7700;
+  --box-shadow: #cfc8b4;
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    font-family: 'Share Tech Mono', 'JetBrains Mono', monospace;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+}
+
+/* 1990s Retro Pixel Art & Classic OS Box Styling */
+.retro-box {
+  background-color: var(--bg-box);
+  border: 4px solid var(--border-tosca);
+  box-shadow: 4px 4px 0px var(--box-shadow), inset 2px 2px 0px rgba(255, 255, 255, 0.05);
+}
+
+.retro-window-header {
+  background: linear-gradient(90deg, #00a88f 0%, #007a68 100%);
+  color: #121324;
+  font-family: 'VT323', monospace;
+  font-weight: bold;
+  padding: 4px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--box-shadow);
+  letter-spacing: 1px;
+}
+
+.retro-window-header-orange {
+  background: linear-gradient(90deg, #ff7700 0%, #cc5f00 100%);
+  color: #121324;
+  font-family: 'VT323', monospace;
+  font-weight: bold;
+  padding: 4px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--box-shadow);
+  letter-spacing: 1px;
+}
+
+.retro-btn {
+  background-color: #ff7700;
+  color: #121324;
+  font-family: 'VT323', 'Share Tech Mono', monospace;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: 3px solid #00a88f;
+  box-shadow: 3px 3px 0px var(--box-shadow);
+  transition: all 0.05s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.retro-btn:hover {
+  background-color: #ff8811;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--box-shadow);
+}
+
+.retro-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--box-shadow);
+}
+
+.retro-btn-secondary {
+  background-color: var(--bg-hover);
+  color: var(--border-tosca);
+  font-family: 'VT323', 'Share Tech Mono', monospace;
+  font-weight: bold;
+  border: 3px solid var(--border-tosca);
+  box-shadow: 3px 3px 0px var(--box-shadow);
+  transition: all 0.05s ease-in-out;
+  cursor: pointer;
+}
+
+.retro-btn-secondary:hover {
+  background-color: var(--bg-header);
+  color: var(--text-teal);
+}
+
+.retro-btn-secondary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px var(--box-shadow);
+}
+
+.retro-input {
+  background-color: var(--bg-subtle);
+  border: 3px solid var(--border-tosca);
+  color: var(--text-teal);
+  font-family: 'Share Tech Mono', monospace;
+  padding: 8px 12px;
+  outline: none;
+}
+
+.retro-input:focus {
+  border-color: #ff7700;
+  box-shadow: 0 0 8px rgba(255, 119, 0, 0.4);
+}
+
+.pixel-font {
+  font-family: 'Press Start 2P', cursive;
+}
+
+.vt323-font {
+  font-family: 'VT323', monospace;
+}
+
+/* Light theme overrides for hardcoded background elements */
+[data-theme='light'] .bg-\[\#121324\] {
+  background-color: #f4f1ea !important;
+}
+
+[data-theme='light'] .bg-\[\#17192f\] {
+  background-color: #eae6db !important;
+}
+
+[data-theme='light'] .bg-\[\#0d0e1c\] {
+  background-color: #e6e0d2 !important;
+}
+
+[data-theme='light'] .bg-\[\#1a1c36\] {
+  background-color: #ffffff !important;
+}
+
+[data-theme='light'] .text-\[\#e0e6f8\] {
+  color: #121324 !important;
+}
+
+[data-theme='light'] .text-\[\#55ffd6\] {
+  color: #007a68 !important;
+}
+
+[data-theme='light'] .text-gray-400 {
+  color: #57607a !important;
+}
+
+[data-theme='light'] .text-gray-300 {
+  color: #2d3448 !important;
+}
+
+[data-theme='light'] .border-gray-700,
+[data-theme='light'] .border-gray-800 {
+  border-color: #c9c3b0 !important;
+}
+
+/* CRT Scanlines Overlay */
+.scanlines {
+  position: relative;
+}
+
+.scanlines::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.15)
+  );
+  background-size: 100% 4px;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Dot leader for print receipt */
+.dot-leader {
+  border-bottom: 2px dotted #00a88f;
+  flex-grow: 1;
+  margin: 0 8px;
+  position: relative;
+  top: -4px;
+}
+
+/* Custom retro scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  background: var(--bg-subtle);
+  border: 2px solid var(--border-tosca);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff7700;
+  border: 2px solid var(--bg-subtle);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff8811;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blinking {
+  animation: blink 1s step-end infinite;
+}
+
+/* Custom utility class to prevent scroll bar hiding content */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
